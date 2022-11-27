@@ -1,0 +1,27 @@
+<div class="wrapper" *ngIf="arr.length > 0">
+  <ol class="c-stepper">
+    <li class="c-stepper__item" *ngFor="let item of arr; let i = index">
+      <div class="stepper-circle">
+        <p>
+          {{ item.id }}
+        </p>
+      </div>
+      <div class="c-stepper__content">
+        <h3 class="c-stepper__title">{{ item.name }}</h3>
+
+        <div class="c-stepper__desc" *ngIf="item.id !== 5; else empty">
+          <p>
+            {{ item.email }}
+          </p>
+          <p>
+            {{ item.body }}
+          </p>
+        </div>
+
+        <ng-template #empty>
+          <div class="c-stepper__desc"></div>
+        </ng-template>
+      </div>
+    </li>
+  </ol>
+</div>
