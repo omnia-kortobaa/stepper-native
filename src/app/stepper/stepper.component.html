@@ -8,8 +8,7 @@
       </div>
       <div class="c-stepper__content">
         <h3 class="c-stepper__title">{{ item.name }}</h3>
-
-        <div class="c-stepper__desc" *ngIf="item.id !== 5; else empty">
+        <div class="c-stepper__desc" *ngIf="item.id !== arr.length; else empty">
           <p>
             {{ item.email }}
           </p>
@@ -17,7 +16,6 @@
             {{ item.body }}
           </p>
         </div>
-
         <ng-template #empty>
           <div class="c-stepper__desc"></div>
         </ng-template>
